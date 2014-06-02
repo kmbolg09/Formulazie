@@ -1,0 +1,7 @@
+= simple_form_for @formulaSheet, html:{ class: "form-horizontal" } do |f|
+    = f.input :title, label: "Formula Sheet Title:"
+    %br
+    = f.input :citation, label: "References:", input_html: {class: "tinymce"}
+    %br
+    = f.submit class: "btn btn-primary", id: "btn-new-fs"
+    = tinymce

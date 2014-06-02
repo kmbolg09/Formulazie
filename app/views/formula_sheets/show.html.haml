@@ -1,0 +1,26 @@
+.container{style: "position:relative;"}
+  .pad20
+  .formula-sheet-title= @formulaSheet.title
+  .col-md-6.col-sm-offset-3.col-lg-6
+    = link_to "Create New Formula", new_formula_sheet_formula_path(@formulaSheet), class: "btn btn-info", id: "btn-new-formula" 
+    = link_to "Delete Formula Sheet", formula_sheet_path(@formulaSheet),method: :delete, class: "btn btn-danger", id: "btn-delete"
+  %br  
+  .col-md-6.col-sm-offset-3.col-lg-6
+    = link_to "Formula Sheets", root_path, class: "btn btn-primary"
+    = link_to "Edit Formula Sheet", edit_formula_sheet_path(@formulaSheet), class: "btn btn-info", id: "btn-edit"
+    %hr
+  - @formulas.each do |f|
+    .col-lg-4.col-md-6.col-sm-6.col-xs-12
+      .well-fs-formula
+        = link_to f.name, formula_sheet_formula_path(f.formula_sheet, f), id: "name"
+        .buttons
+          = f.formula.to_s.html_safe
+          %br
+          = link_to "Delete", formula_sheet_formula_path(f.formula_sheet, f), method: :delete, class: "btn btn-danger"
+          = link_to "Edit", edit_formula_sheet_formula_path(f.formula_sheet, f), class: "btn btn-info"
+        %hr
+.col-lg-12.col-md-12.col-sm-12.col-xs-12       
+  .well     
+    %B Citations: 
+    %br     
+    = @formulaSheet.citation.to_s.html_safe

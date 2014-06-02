@@ -1,0 +1,21 @@
+.index
+  .col-md-8
+    %h1.title Formula Sheets  
+    %p= link_to "Create New Formula Sheet", new_formula_sheet_path, class: "btn btn-info" 
+    %hr
+    .formula-sheet-listing
+      - @formulaSheets.each do |f|
+        .col-lg-12.col-md-12.col-sm-12.col-xs-12
+          .well-formulas
+
+            %h2= link_to f.title, formula_sheet_path(f)
+            
+            - if f.formulas.length >= 1
+              .well.buttons
+                = f.formulas.first.name
+                = f.formulas.first.formula.to_s.html_safe     
+            .buttons
+              %p= link_to "Delete", formula_sheet_path(f), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger", id:"formula-sheet-delete"
+              %p= link_to "Edit", edit_formula_sheet_path(f), class: "btn btn-info", id: "btn-edit"
+              %p= link_to "View Formula Sheet", formula_sheet_path(f), class: "btn btn-primary"
+

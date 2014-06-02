@@ -1,0 +1,19 @@
+.index
+  .col-md-8
+    %h1.title Formulas
+    = link_to "Create New Formula", new_formula_sheet_formula_path, class: "btn btn-info"
+    %hr
+    .formula-listing
+      - @formulas.each do |f|
+        .col-lg-6.col-md-6.col-sm-6.col-xs-6
+          .well-formulas
+
+            %h2= link_to f.name, formula_path(f) 
+            %p= f.formula.html_safe
+            /%p= f.description.to_s.html_safe
+            /%p= f.example.to_s.html_safe    
+            %br
+            %p= link_to "Delete", formula_path(f), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger"
+            %p= link_to "Edit", edit_formula_path(f), class: "btn btn-info", id: "btn-edit"
+
+       

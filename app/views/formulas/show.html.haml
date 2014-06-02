@@ -1,0 +1,17 @@
+.col-md-offset-2.col-md-8
+  .well
+    = link_to "Back to formula sheet", formula_sheet_path(@formula.formula_sheet), class: "btn btn-primary"
+    %br
+    %h1=@formula.name
+    %br
+    %p=@formula.formula.to_s.html_safe
+    %br
+    %p=@formula.description.to_s.html_safe
+    %br
+    %p=@formula.example.to_s.html_safe
+    %hr 
+    = link_to "Create New Formula", new_formula_sheet_formula_path, class: "btn btn-info", id: "btn-new"  
+    /=link_to "View All Formulas", root_path, class: "btn btn-info", id: "btn-view"
+    = link_to "Edit", edit_formula_sheet_formula_path(@formula.formula_sheet, @formula), class: "btn btn-info", id: "btn-edit"
+    = link_to "Delete", formula_sheet_formula_path(@formula.formula_sheet, @formula), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger"
+    .clearfix

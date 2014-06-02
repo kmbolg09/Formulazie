@@ -1,0 +1,146 @@
+@import "bootstrap";
+$bg_well: rgba(255,255,255,0.7);
+.well{
+  background: $bg_well
+}
+.well-formula{
+  @extend .well;
+  margin-top: 20px;
+  margin-bottom: 0;
+
+}  
+
+  
+.well-signup{
+  @extend .well;
+
+}
+.well-formulas{
+  @extend .well;
+
+}
+.well-fs-formula{
+  @extend .well; 
+  height: 300px;
+}
+.container{
+  text-align: center;
+}
+.well-formula-sample{
+  @extend .well-formula;
+  height:200px;
+  margin-bottom: 20px;
+}
+.index{
+  padding-top: 10px;
+  text-align: center;
+}
+
+#btn-view{
+  background-color: orange;
+  border-color: orange;
+
+}
+
+#btn-edit{
+  @extend .btn;
+  background-color: #037E8C;
+  border-color: white; 
+}
+#btn-delete{
+  @extend .btn;
+  border-color:#FFFFF3;
+  border-width:5px, 5px, 5px, 5px;
+}
+
+.btn-danger{
+  background-color: #F24C27;
+
+}
+
+
+.background{
+background-color: #424242
+}
+
+
+#btn-new-formula{
+  @extend .btn;
+  background-color: #024959;
+  border-color:  white;
+      }
+#formula-sheet-delete{
+  float:right;
+}    
+.navbar-header{
+  padding-right: 100px;
+  background-color: #66FFFF;
+  
+}
+
+.index{
+  padding-top: 10px;
+
+
+}
+.title{
+  text-align: center;
+  color: white;
+}
+.title-1{
+  @extend .title;
+  color: #FF0066;
+}
+
+.formula-sheet-title{
+  font-family: georgia, serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-top: 20px;
+  text-align: center;
+  color: white;
+
+
+}
+.create-formula{
+   font-family: georgia, serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-top: 20px;
+  text-align: center;
+  
+}
+.edit-formula{   
+  font-family: georgia, serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-top: 20px;
+  text-align: center;
+
+}
+
+.pad30{padding-bottom: 100px;}
+
+.new { 
+  background: white;}
+
+.buttons{
+  text-align: left;
+}
+#btn-home{
+  @extend .btn;
+}
+
+#name { 
+font-size: 20px;
+font-weight: bold;
+}
+
+.form-inputs{
+  margin: auto;
+  
+  padding: 10px;
+}
